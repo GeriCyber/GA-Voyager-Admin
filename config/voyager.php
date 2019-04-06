@@ -145,9 +145,11 @@ return [
         ],
 
         'widgets' => [
-            'TCG\\Voyager\\Widgets\\UserDimmer',
+            /*'TCG\\Voyager\\Widgets\\UserDimmer',
             'TCG\\Voyager\\Widgets\\PostDimmer',
-            'TCG\\Voyager\\Widgets\\PageDimmer',
+            'TCG\\Voyager\\Widgets\\PageDimmer',*/
+            \App\Widgets\Product::class,
+            \App\Widgets\Customer::class,
         ],
 
     ],
@@ -184,7 +186,7 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#7700f9',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
