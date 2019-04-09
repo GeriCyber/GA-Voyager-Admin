@@ -33,7 +33,7 @@ class Customer extends BaseDimmer
                 'text' => __('Ver clientes'),
                 'link' => route('voyager.customers.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/02.jpg'),
+            'image' => '../../images/backgrounds/1.jpg',
         ]));
     }
 

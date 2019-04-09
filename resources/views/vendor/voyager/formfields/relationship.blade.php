@@ -15,12 +15,17 @@
                 @endphp
 
                 @if(isset($query))
-                    {{-- Enlace a la relacion del user --}}
-                    <p>
-                        <a href="{{ route('voyager.'.Voyager::model('DataType')->whereName($options->table)->first()->slug.'.show',$query->{$options->key}) }}">
-                            {{ $query->{$options->label} }}
-                        </a>
-                    </p>
+                    @if(auth()->user()->hasRole('admin'))
+                        {{-- Enlace a la relacion del user --}}
+                        <p>
+                            <a href="{{ route('voyager.'.Voyager::model('DataType')->whereName($options->table)->first()->slug.'.show',$query->{$options->key}) }}">
+                                {{ $query->{$options->label} }}
+                            </a>
+                        </p>
+                    @elseif(auth()->user()->hasRole('customer'))
+                        <p>{{ $query->{$options->label} }}</p>
+                    @endif
+
                 @else
                     <p>{{ __('voyager::generic.no_results') }}</p>
                 @endif

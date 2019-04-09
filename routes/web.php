@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Middleware\ProtectExportables;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('exports', 'ExportController@index')->middleware(ProtectExportables::class)->name('voyager.exports.index');
+Route::post('exports', 'ExportController@export')->middleware(ProtectExportables::class)->name('voyager.exports.download'); 

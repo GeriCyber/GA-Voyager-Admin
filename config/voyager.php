@@ -18,6 +18,8 @@ return [
         'redirect'                     => '/admin',
     ],
 
+    'prefix' => 'admin',
+
     /*
     |--------------------------------------------------------------------------
     | Controllers config
@@ -186,7 +188,7 @@ return [
     |
     */
 
-    'primary_color' => '#7700f9',
+    'primary_color' => '#22a7f0',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 

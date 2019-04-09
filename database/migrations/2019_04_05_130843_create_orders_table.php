@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration {
 			$table->integer('customer_id')->unsigned();
 			$table->integer('order_status_id')->unsigned();
 			$table->integer('address_id')->unsigned();
+			$table->integer('product_id')->unsigned();
 			$table->string('details')->nullable();
 			$table->timestamps();
 		});

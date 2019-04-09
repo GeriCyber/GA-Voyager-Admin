@@ -20,6 +20,7 @@ class AddForeignKeysVoyager extends Migration
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->foreign('order_status_id')->references('id')->on('order_status');
             $table->foreign('address_id')->references('id')->on('customer_addresses');
+            $table->foreign('product_id')->references('id')->on('products');
         });
         Schema::table('products', function(Blueprint $table) {
             $table->foreign('product_category_id')->references('id')->on('product_categories');
